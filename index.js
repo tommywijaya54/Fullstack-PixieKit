@@ -23,11 +23,29 @@ file = file
   .filter((st) => !st.includes('//'))
   .join('\n'); // removing comment
 
-String.prototype.findTag = function () {
-  // by default it will find first pair of tag
+class DustCode extends String {
+  removeComment = function () {};
+  findTag = function () {
+    // by default it will find first pair of tag
+    const opening_closure_tag_index = this.indexOf('<');
+    const closing_closure_tag_index = this.indexOf('>');
+    const opening_tag_name = this.substring(
+      opening_closure_tag_index + 1,
+      closing_closure_tag_index
+    );
 
-  console.log('xxx => ', this);
-};
+    const opening_tag = `<${opening_tag_name}>`;
+    const closing_tag = `</${opening_tag_name}>`;
+
+    // checking if it's a pair or self closing tag;
+
+    console.log('opening tag => \n\n\n', opening_tag);
+    console.log('closing tag => \n\n\n', closing_tag);
+    console.log('tag name => \n\n\n', opening_tag_name);
+  };
+}
+
+String.prototype.toSchema = function () {};
 
 file.findTag();
 
