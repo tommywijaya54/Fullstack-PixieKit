@@ -1,25 +1,26 @@
-<App>
-  <Connection>
-
-  </Connection>
+<app name='todo' route='/'>
+  <connection>
+      <form='browser'
+  </connection>
   
-  <Backend|Server|PHP>
+  <backend|server|php>
     <Database>
-    
+        
     </Database>
     <Model>
-
+        
     </Model>
     <Controller>
 
-    
     </Controller>
-  </Backend|Server|PHP>
-  <Frontend>
-    <JS>
+  </backend|server|php>
 
-    <CSS>
+
+  <frontend>
+    <js></js>
+
+    <css></css>
     
-    <HTML>
-  </Frontend>
-</App>
+    <html></html>
+  </frontend>
+</app>
