@@ -4,22 +4,35 @@ import { XMLtoJSON } from './PixieKit/engine/vendor/xmltojson.js';
 import './style.css';
 
 // Write Javascript code!
+let log = '';
 const appDiv = document.getElementById('app');
 appDiv.innerHTML = `<h1>JS Starter</h1>`;
 
-class PixieEngine {
-  readfile(fileAsText) {
-    let parser, doc;
+const Pixie = new PixieDust();
+let file = Pixie.file;
+// console.log(Pixie.file);
 
-    // parser = new DOMParser();
-    // doc = parser.parseFromString(fileAsText, 'text/xml');
-    const toJson = new XMLtoJSON();
-    const x = toJson.fromStr(fileAsText);
-    console.log(x);
-    window.xx = x;
-    return 'xxx';
-  }
-}
-const PD = new PixieDust();
-const eng = new PixieEngine();
-appDiv.innerHTML = eng.readfile(PD.file);
+// find tag set
+// tag can be : <p> & </p>
+// tag can be : <h title='ssss'>
+
+// First turn text to easy readable json
+// // read first <
+file = file
+  .split('\n')
+  .filter((st) => !st.includes('//'))
+  .join('\n'); // removing comment
+
+String.prototype.findTag = function () {
+  // by default it will find first pair of tag
+
+  console.log('xxx => ', this);
+};
+
+file.findTag();
+
+log = file; //file.indexOf('<app ');
+
+// Second setup environment & app application
+
+console.log(log);
