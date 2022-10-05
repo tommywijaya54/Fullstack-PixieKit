@@ -1,23 +1,27 @@
 <app name='todo' route='/'>
-  <backend|server|php>
+  <server>
     <database>
         Database
     </database>
     <model>
-        
+        Model
     </model>
     <controller>
-
+        Controller 
     </controller>
-  </backend|server|php>
+  </server>
   <frontend>
-    <js></js>
+    <js>
+      Js File
+    </js>
 
-    <css></css>
+    <css>
+      Css File
+    </css>
     
     <html>
       <div>
-      
+        Template
       </div>
     </html>
   </frontend>

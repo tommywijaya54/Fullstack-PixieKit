@@ -8,19 +8,12 @@ appDiv.innerHTML = `<h1>JS Starter</h1>`;
 
 class PixieEngine {
   readfile(fileAsText) {
-    var text, parser, xmlDoc;
-    text =
-      '<bookstore><book>' +
-      '<title>Everyday Italian</title>' +
-      '<author>Giada De Laurentiis</author>' +
-      '<year>2005</year>' +
-      '</book></bookstore>';
+    let parser, doc;
 
     parser = new DOMParser();
-    xmlDoc = parser.parseFromString(text, 'text/xml');
-
-    var reader = new FileReader();
-    return fileAsText;
+    doc = parser.parseFromString(fileAsText, 'text/xml');
+    console.log(doc.getElementsByTagName('app').name);
+    return doc.app['name'];
   }
 }
 const PD = new PixieDust();
