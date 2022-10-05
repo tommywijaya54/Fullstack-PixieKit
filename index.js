@@ -1,5 +1,6 @@
 // Import stylesheets
 import { PixieDust } from './PixieKit/engine/pixiedust.js';
+import { XMLtoJSON } from './PixieKit/engine/vendor/xmltojson.js';
 import './style.css';
 
 // Write Javascript code!
@@ -10,10 +11,13 @@ class PixieEngine {
   readfile(fileAsText) {
     let parser, doc;
 
-    parser = new DOMParser();
-    doc = parser.parseFromString(fileAsText, 'text/xml');
-    console.log(doc.getElementsByTagName('app').name);
-    return doc.app['name'];
+    // parser = new DOMParser();
+    // doc = parser.parseFromString(fileAsText, 'text/xml');
+    const toJson = new XMLtoJSON();
+    const x = toJson.fromStr(fileAsText);
+    console.log(x);
+    window.xx = x;
+    return 'xxx';
   }
 }
 const PD = new PixieDust();

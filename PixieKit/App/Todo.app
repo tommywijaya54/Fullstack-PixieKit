@@ -1,8 +1,19 @@
+// Load App Environment
+<app-environment>
+  <default
+    title='Willow Tree'
+    database='mysql:url:username:password'
+  >
+  </default>
+  <production
+    title='Forest of Fairy'
+    database='mysql:url:username:password'
+  >
+</app-environment>
+
+// App
 <app name='todo' route='/'>
   <server>
-    <database>
-        Database
-    </database>
     <model>
         Model
     </model>
@@ -21,7 +32,7 @@
     
     <html>
       <div>
-        Template
+        Template {app.title}
       </div>
     </html>
   </frontend>

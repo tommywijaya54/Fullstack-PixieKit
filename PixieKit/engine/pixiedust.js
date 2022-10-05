@@ -23,6 +23,7 @@ export class PixieDust {
     </css>
     
     <html>
+      Hello
       <div>
         Template
       </div>
