@@ -1,5 +1,11 @@
 export class PixieDust {
   constructor() {
+    this.tinyfile = `
+    <app-environment>
+    Hello
+    </app-environment>
+    `;
+
     this.file = `
     // Load App Environment
 <app-environment>
